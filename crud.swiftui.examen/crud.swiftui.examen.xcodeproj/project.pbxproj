@@ -13,6 +13,7 @@
 		CD483D912922A2BC00678C34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD483D902922A2BC00678C34 /* Preview Assets.xcassets */; };
 		CD483D932922A2BC00678C34 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD483D922922A2BC00678C34 /* Persistence.swift */; };
 		CD483D962922A2BC00678C34 /* crud_swiftui_examen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD483D942922A2BC00678C34 /* crud_swiftui_examen.xcdatamodeld */; };
+		CD483D9D2922A4CE00678C34 /* Producto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD483D9C2922A4CE00678C34 /* Producto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		CD483D902922A2BC00678C34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD483D922922A2BC00678C34 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		CD483D952922A2BC00678C34 /* crud_swiftui_examen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = crud_swiftui_examen.xcdatamodel; sourceTree = "<group>"; };
+		CD483D9C2922A4CE00678C34 /* Producto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				CD483D892922A2BB00678C34 /* crud_swiftui_examenApp.swift */,
 				CD483D8B2922A2BB00678C34 /* ContentView.swift */,
+				CD483D9C2922A4CE00678C34 /* Producto.swift */,
 				CD483D8D2922A2BC00678C34 /* Assets.xcassets */,
 				CD483D922922A2BC00678C34 /* Persistence.swift */,
 				CD483D942922A2BC00678C34 /* crud_swiftui_examen.xcdatamodeld */,
@@ -145,6 +148,7 @@
 			files = (
 				CD483D932922A2BC00678C34 /* Persistence.swift in Sources */,
 				CD483D8C2922A2BB00678C34 /* ContentView.swift in Sources */,
+				CD483D9D2922A4CE00678C34 /* Producto.swift in Sources */,
 				CD483D962922A2BC00678C34 /* crud_swiftui_examen.xcdatamodeld in Sources */,
 				CD483D8A2922A2BB00678C34 /* crud_swiftui_examenApp.swift in Sources */,
 			);

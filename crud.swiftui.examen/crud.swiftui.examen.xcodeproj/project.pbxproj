@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B396F01A29269DC9001D2727 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396F01929269DC9001D2727 /* CoreDataManager.swift */; };
 		CD483D8A2922A2BB00678C34 /* crud_swiftui_examenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD483D892922A2BB00678C34 /* crud_swiftui_examenApp.swift */; };
 		CD483D8C2922A2BB00678C34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD483D8B2922A2BB00678C34 /* ContentView.swift */; };
 		CD483D8E2922A2BC00678C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD483D8D2922A2BC00678C34 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B396F01929269DC9001D2727 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CD483D862922A2BB00678C34 /* crud.swiftui.examen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crud.swiftui.examen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD483D892922A2BB00678C34 /* crud_swiftui_examenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crud_swiftui_examenApp.swift; sourceTree = "<group>"; };
 		CD483D8B2922A2BB00678C34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		CD483D882922A2BB00678C34 /* crud.swiftui.examen */ = {
 			isa = PBXGroup;
 			children = (
+				B396F01929269DC9001D2727 /* CoreDataManager.swift */,
 				CD483D892922A2BB00678C34 /* crud_swiftui_examenApp.swift */,
 				CD483D8B2922A2BB00678C34 /* ContentView.swift */,
 				CD483D9C2922A4CE00678C34 /* Producto.swift */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B396F01A29269DC9001D2727 /* CoreDataManager.swift in Sources */,
 				CD483D932922A2BC00678C34 /* Persistence.swift in Sources */,
 				CD483D8C2922A2BB00678C34 /* ContentView.swift in Sources */,
 				CD483D9D2922A4CE00678C34 /* Producto.swift in Sources */,

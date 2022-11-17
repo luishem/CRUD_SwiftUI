@@ -20,21 +20,23 @@ struct ContentView: View {
         TabView {
             Text("Home").tabItem{
                 Image(systemName: "list.number")
-                Text("Home")
-                    .tabItem{
-                        Image(systemName: "person.crop.circle")
-                        Text("Consultar")
-                    }
-                Text("Create").tabItem{
-                    Image(systemName: "person.badge.plus")
-                    Text("Create")
+            }
+            
+            Text("Home")
+                .tabItem{
+                    Image(systemName: "person.crop.circle")
+                    Text("Consultar")
                 }
-                Text("Modificar").tabItem{
-                    Image(systemName: "pencil.circle")
-                    Text("Modificar")
-                }
+            Text("Create").tabItem{
+                Image(systemName: "person.badge.plus")
+                Text("Create")
+            }
+            Text("Modificar").tabItem{
+                Image(systemName: "pencil.circle")
+                Text("Modificar")
             }
         }
+        .padding()
     }
 }
 

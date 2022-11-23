@@ -9,46 +9,71 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    
+    let coreDM: CoreDataManager
+    
+    @State private var id: String = ""
+    @State private var nombre: String = ""
+    @State private var marca: String = ""
+    @State private var descripcion: String = ""
+    @State private var precio: String = ""
+    
+    @State private var productos: [Producto] = [Producto]()
 
     var body: some View {
-        TabView {
-            Text("Home").tabItem{
-                Image(systemName: "list.number")
-            }
-            
-            Text("Home")
-                .tabItem{
-                    Image(systemName: "person.crop.circle")
-                    Text("Consultar")
+        NavigationView {
+            VStack {
+                TextField("Id del producto: ", text: $id).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Nombre del producto: ", text: $nombre).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Marca del producto: ", text: $marca).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Descripcion del producto: ", text: $descripcion).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Precio del producto: ", text: $precio).textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Button("Guardar") {
+                    coreDM.guardarProducto(id: id, nombre: nombre, marca: marca, descripcion: descripcion, precio: precio)
+                    mostrarProductos()
+                    id = ""
+                    nombre = ""
+                    marca = ""
+                    descripcion = ""
+                    precio = ""
                 }
-            Text("Create").tabItem{
-                Image(systemName: "person.badge.plus")
-                Text("Create")
-            }
-            Text("Modificar").tabItem{
-                Image(systemName: "pencil.circle")
-                Text("Modificar")
-            }
+                
+                List {
+                    ForEach(productos, id: \.self) {
+                        prod in
+                        VStack {
+                            Text(prod.id ?? "")
+                            Text(prod.nombre ?? "")
+                            Text(prod.marca ?? "")
+                            Text(prod.descripcion ?? "")
+                            Text(prod.precio ?? "")
+                        }
+                    }
+                    .onDelete(perform: {
+                        IndexSet in
+                        IndexSet.forEach({ index in
+                            let producto = productos[index]
+                            coreDM.borrarProducto(producto: producto)
+                        })
+                    })
+                }
+                Spacer()
+            }.padding()
+                .navigationTitle("Productos")
+                .onAppear(perform: {
+                    mostrarProductos()
+                })
         }
-        .padding()
+    }
+    
+    func mostrarProductos() {
+        productos = coreDM.leerTodosProductos()
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(coreDM: CoreDataManager())
     }
 }

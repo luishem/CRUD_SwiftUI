@@ -8,13 +8,12 @@
 import SwiftUI
 
 @main
+
 struct crud_swiftui_examenApp: App {
-    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView(coreDM : CoreDataManager())
         }
     }
 }

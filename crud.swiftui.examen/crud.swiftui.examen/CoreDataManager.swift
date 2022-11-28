@@ -21,10 +21,12 @@ class CoreDataManager {
     }
     
     func borrarProducto(producto: Producto) {
+        print(producto)
         persistentContainer.viewContext.delete(producto)
         
         do {
             return try persistentContainer.viewContext.save()
+            
         } catch {
             persistentContainer.viewContext.rollback()
             print("Failed to save context \(error.localizedDescription)")
@@ -41,7 +43,7 @@ class CoreDataManager {
         }
     }
     
-    func guardarProducto(id: Int32, nombre: String, marca: String, descripcion: String, precio: Double) {
+    func guardarProducto(id: Int64, nombre: String, marca: String, descripcion: String, precio: Float) {
         let producto = Producto(context: persistentContainer.viewContext)
         producto.id = id
         producto.nombre = nombre
@@ -55,6 +57,25 @@ class CoreDataManager {
         }
         catch {
             print("Failed to save error en \(error)")
+        }
+    }
+    
+    func editarproducto(producto: Producto) {
+        let fetchRequest: NSFetchRequest<Producto> = Producto.fetchRequest()
+        let predicate = NSPredicate(format: "id = %@", producto.id)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let datos = try persistentContainer.viewContext.fetch(fetchRequest)
+            let p = datos.first
+            p?.nombre = producto.nombre
+            p?.marca = producto.marca
+            p?.descripcion = producto.descripcion
+            p?.precio = producto.precio
+            try persistentContainer.viewContext.save()
+            print("Producto actualizado")
+        }catch {
+            print("Failed error: \(error)")
         }
     }
 }

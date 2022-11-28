@@ -2,10 +2,10 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Producto" representedClassName="Producto" syncable="YES" codeGenerationType="class">
         <attribute name="descripcion" attributeType="String"/>
-        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="marca" attributeType="String"/>
         <attribute name="nombre" attributeType="String"/>
-        <attribute name="precio" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precio" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="Producto" positionX="-63" positionY="-9" width="128" height="104"/>

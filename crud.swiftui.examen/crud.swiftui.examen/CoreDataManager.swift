@@ -62,7 +62,7 @@ class CoreDataManager {
     
     func editarproducto(producto: Producto) {
         let fetchRequest: NSFetchRequest<Producto> = Producto.fetchRequest()
-        let predicate = NSPredicate(format: "id = %@", producto.id)
+        let predicate = NSPredicate(format: "id = %i", producto.id)
         fetchRequest.predicate = predicate
         
         do {
